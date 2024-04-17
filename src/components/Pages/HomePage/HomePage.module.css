@@ -10,11 +10,11 @@
     background-color: rgb(203, 221, 237, 0.7);
     width: 550px;
     height: 250px;
-    margin: 150px auto;
+   margin-top: 150px;
     border-radius: 15px;
     color: rgb(4, 4, 47);
-   padding-left: 150px;
-   padding-right: 150px;
+   padding-left: 100px;
+   padding-right: 100px;
 
 }
 

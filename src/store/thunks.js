@@ -1,21 +1,18 @@
-//import { createAsyncThunk } from "@reduxjs/toolkit";
-//import {  currentUser, loginUser, logoutUser, registrationUser } from "service/auth";
-//import { addContacts, deleteContacts, fetchContacts} from "service/getContactApi";
+import { createAsyncThunk } from '@reduxjs/toolkit';
+import { fetchCars } from 'service/getCarsApi';
 
-// export const getContactsThunk = createAsyncThunk(
-//     'contacts/getAllContacts',
-//     async (_, thunkApi) => {
-//         try {
-//             const contacts = await fetchContacts()
-//             console.log(contacts)
-//             return contacts
-//         } catch (error) {
-//             return thunkApi.rejectWithValue(error.message)
-            
-//         }
-//     }
-   
-// );
+export const getCarsThunk = createAsyncThunk(
+  'advert/getAllCars',
+  async (_, thunkApi) => {
+    try {
+      const data = await fetchCars();
+      console.log(data);
+      return data;
+    } catch (error) {
+      return thunkApi.rejectWithValue(error.message);
+    }
+  }
+);
 
 // export const addContactThunk = createAsyncThunk(
 //     'contacts/getAddContacts',
@@ -25,11 +22,11 @@
 //             return contacts
 //         } catch (error) {
 //             return thunkApi.rejectWithValue(error.message)
-            
+
 //         }
 //     }
 // );
-    
+
 // export const deleteContactThunk = createAsyncThunk(
 //     'contacts/getDeleteContacts',
 //     async (contactId, thunkApi) => {
@@ -38,15 +35,10 @@
 //             return contacts
 //         } catch (error) {
 //             return thunkApi.rejectWithValue(error.message)
-            
+
 //         }
 //     }
 // );
-
-
-
-
-
 
 // export const signUpThunk = createAsyncThunk(
 //     'auth/signUp',
@@ -59,7 +51,6 @@
 // 	}
 // })
 
-
 // export const loginThunk = createAsyncThunk(
 //     'auth/login',
 //     async ({email,password}, thunkApi) => {
@@ -70,7 +61,6 @@
 // 		return thunkApi.rejectWithValue(error.message)
 // 	}
 // })
-
 
 // export const logoutThunk = createAsyncThunk(
 //     'auth/logout',
@@ -93,10 +83,10 @@
 //             console.log('no token')
 //             return thunkApi.rejectWithValue('Unable to fetch user');
 //         }
-        
+
 //         try {
 //             return await currentUser()
-            
+
 //         } catch (error) {
 //             return thunkApi.rejectWithValue(error.message)
 //         }

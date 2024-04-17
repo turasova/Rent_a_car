@@ -1,15 +1,11 @@
 import { NavLink } from 'react-router-dom';
 import css from './Header.module.css';
-import { useSelector } from 'react-redux';
-import { isAuthSelector } from 'store/selectors';
-import AuthMenu from 'components/AuhtMenu/AuthMenu';
+//import { useSelector } from 'react-redux';
+// import { isAuthSelector } from 'store/selectors';
+// import AuthMenu from 'components/AuhtMenu/AuthMenu';
 
 export const Header = () => {
-  const isLoggedIn = useSelector(isAuthSelector);
-
-  return isLoggedIn ? (
-    <AuthMenu />
-  ) : (
+  return (
     <header className={css.header}>
       <nav>
         <div className={css.containerNav}>
@@ -21,29 +17,29 @@ export const Header = () => {
                   `${css.textLink} ${isActive ? css.active : ''}`
                 }
               >
-                <p className={css.heroText}>PhoneBook</p>
+                <p className={css.heroText}>Home</p>
               </NavLink>
             </li>
           </ul>
           <ul className={css.auth}>
             <li>
               <NavLink
-                to="/login"
+                to="/catalog"
                 className={({ isActive }) =>
                   `${css.textLink} ${isActive ? css.active : ''}`
                 }
               >
-                Sing In
+                Catalog
               </NavLink>
             </li>
             <li>
               <NavLink
-                to="/registration"
+                to="/favorites"
                 className={({ isActive }) =>
                   `${css.textLink} ${isActive ? css.active : ''}`
                 }
               >
-                Registration
+                Favorites
               </NavLink>
             </li>
           </ul>

@@ -1,0 +1,9 @@
+const FavoritesPage = () => {
+  //   const contactIsLoading = useSelector(getIsLoading);
+  //   const contacts = useSelector(getContactValue);
+  //   const phonebook = defaultPhonebook;
+  //   const avatarContact = defaultAvatarContact;
+
+  return <div></div>;
+};
+export default FavoritesPage;
