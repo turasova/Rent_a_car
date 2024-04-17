@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { filterFavoritesSlice } from './filterSlice';
+//import { filterFavoritesSlice } from './filterSlice';
 
 import {
   FLUSH,
