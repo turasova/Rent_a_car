@@ -1,0 +1,32 @@
+.title {
+    color: rgb(4, 4, 47);
+    font-style: italic;
+}
+
+.contactsWrapper {
+   
+    padding: 20px 20px;
+    border-radius: 10px;
+    width: 450px;
+    margin: 0px auto;
+    text-align: center;
+    background-color: rgb(203, 221, 237, 0.7);;
+    margin-bottom: 150px;
+}
+
+.phonebookWrapper {
+
+    padding: 20px 20px;
+    border-radius: 10px;
+    width: 450px;
+    margin: 50px auto;
+    text-align: center;
+    margin-top: 150px;
+    background-color: rgb(203, 221, 237, 0.7);;
+}
+.phone{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+}

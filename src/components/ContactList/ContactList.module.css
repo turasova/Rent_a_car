@@ -1,0 +1,26 @@
+.listContact{
+    
+    list-style: none;
+    margin-top: 30px;
+    color:rgb(4, 4, 47);
+  
+   
+}
+.buttonDelete {
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 5px 3px 3px rgb(55, 55, 124);
+}
+
+.buttonDelete:hover,
+.buttonDelete:focus {
+    background-color: rgb(55, 55, 124);
+    color: white;
+}
+
+.contactItem {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}

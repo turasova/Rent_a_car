@@ -1,0 +1,35 @@
+.containerForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 40px;
+  background-color: rgb(217, 232, 227,0.7);
+  max-width: 600px;
+  margin: 50px auto;
+border-radius: 8px;
+padding: 20px;
+box-shadow: 5px 3px 3px rgb(55, 55, 124);
+margin-top: 150px;
+}
+
+.inputForm{
+    width: 350px;
+    border-radius: 4px;
+    padding: 8px;
+    margin: 10px;
+}
+.button {
+    width: 100px;
+    padding: 5px 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 30px auto;
+    box-shadow: 5px 3px 3px rgb(55, 55, 124);
+}
+
+.button:hover,
+.button:focus {
+background-color: rgb(55, 55, 124);
+    color: white;
+}
