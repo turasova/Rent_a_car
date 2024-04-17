@@ -7,7 +7,7 @@ import { Loader } from './Loader/loader';
 
 const HomePage = lazy(() => import('./Pages/HomePage/HomePage'));
 const CarsPage = lazy(() => import('./Pages/CarsPage/CarsPage'));
-//const FavoritesPage = lazy(() => import('./Pages/FavoritesPage'));
+const FavoritesPage = lazy(() => import('./Pages/FavoritesPage/FavoritesPage'));
 
 export const App = () => {
   // const dispatch = useDispatch();
@@ -22,7 +22,7 @@ export const App = () => {
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
           <Route path="/catalog" element={<CarsPage />} />
-          {/* <Route path="/favorites" element={<FavoritesPage />} /> */}
+          <Route path="/favorites" element={<FavoritesPage />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Route>
       </Routes>

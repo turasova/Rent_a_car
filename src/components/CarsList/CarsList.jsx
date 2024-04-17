@@ -30,9 +30,9 @@ export const CarsList = ({ cars }) => {
   // };
 
   return (
-    <ul className={css.listContact}>
+    <ul className={css.listCars}>
       {cars.map(car => (
-        <li className={css.contactItem} key={car._id}>
+        <li className={css.carItem} key={car._id}>
           <CarItem car={car} />
         </li>
       ))}

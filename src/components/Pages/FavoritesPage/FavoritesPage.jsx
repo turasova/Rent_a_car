@@ -4,6 +4,10 @@ const FavoritesPage = () => {
   //   const phonebook = defaultPhonebook;
   //   const avatarContact = defaultAvatarContact;
 
-  return <div></div>;
+  return (
+    <div>
+      <p>welcame favoritePage</p>
+    </div>
+  );
 };
 export default FavoritesPage;
