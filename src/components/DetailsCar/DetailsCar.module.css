@@ -1,0 +1,140 @@
+.descriptionText {
+color:  #475467;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+.image {
+width: 290px;
+height: 310px;
+object-fit: cover;
+border-radius: 10px;
+
+}
+.imageContainer {
+display: flex;
+gap: 16px;
+justify-content: center;
+margin-bottom: 24px;
+}
+.reviewer_rating {
+color: #101828;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    text-decoration-line: underline;
+}
+.location {
+display: flex;
+    flex-wrap: nowrap;
+    column-gap: 16px;
+    margin-bottom: 16px;
+}
+.price {
+color: #101828;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 30px;
+    margin-bottom: 24px;
+}
+.title {
+color: #101828;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 30px;
+}
+.cardContainer {
+margin: 40px;
+
+}
+.list_reviewers{
+    list-style: none;
+    margin-top: 44px;
+}
+.name {
+color:  #101828;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+}
+.rating{
+color: #FFC531;
+}
+.comment{
+    width: 430px;
+color: #475467;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+.reviews_container {
+    display: flex;
+    margin-top: 44px;
+    gap: 24px;
+    
+
+}
+.info_car {
+    width: 430px;
+}
+
+.list_feature {
+list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 44px;
+
+}
+
+.listItem {
+        display: flex;
+            padding: 12px 18px;
+            align-items: center;
+            gap: 8px;
+            border-radius: 100px;
+            background: #F2F4F7;
+            mix-blend-mode: multiply;
+}
+.title_vehicle {
+    color: #101828;
+        font-family: Inter;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 24px;
+
+}
+.list_vehicle {
+    list-style: none;
+}
+
+.listItem_details {
+color: #101828;
+    text-align: center;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 34px;
+  
+}
+.vehicle_container{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+}
+
+

@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { fetchCars } from 'service/getCarsApi';
+import { fetchCars, fetchCarsId, fetchCarsLocation } from 'service/getCarsApi';
 
 export const getCarsThunk = createAsyncThunk(
   'advert/getAllCars',
@@ -14,81 +14,39 @@ export const getCarsThunk = createAsyncThunk(
   }
 );
 
-// export const addContactThunk = createAsyncThunk(
-//     'contacts/getAddContacts',
-//     async ({name,phone}, thunkApi) => {
-//         try {
-//             const contacts = await addContacts({name,phone})
-//             return contacts
-//         } catch (error) {
-//             return thunkApi.rejectWithValue(error.message)
+export const getLocationThunk = createAsyncThunk(
+  'advert/getLocationCars',
+  async ({ location }, thunkApi) => {
+    try {
+      const data = await fetchCarsLocation({ location });
+      console.log(data);
+      return data;
+    } catch (error) {
+      return thunkApi.rejectWithValue(error.message);
+    }
+  }
+);
 
-//         }
-//     }
-// );
+export const addFavoriteCar = createAsyncThunk(
+  'cars/addFavorite',
+  async ({ _id }, thunkAPI) => {
+    try {
+      const data = await fetchCarsId({ _id });
+      console.log(data);
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
 
-// export const deleteContactThunk = createAsyncThunk(
-//     'contacts/getDeleteContacts',
-//     async (contactId, thunkApi) => {
-//         try {
-//             const contacts = await deleteContacts(contactId)
-//             return contacts
-//         } catch (error) {
-//             return thunkApi.rejectWithValue(error.message)
-
-//         }
-//     }
-// );
-
-// export const signUpThunk = createAsyncThunk(
-//     'auth/signUp',
-//     async ({name,email,password}, thunkApi) => {
-//         try {
-//         const newUser= await registrationUser({name,email,password})
-// 		return newUser
-// 	} catch (error) {
-// 		return thunkApi.rejectWithValue(error.message)
-// 	}
-// })
-
-// export const loginThunk = createAsyncThunk(
-//     'auth/login',
-//     async ({email,password}, thunkApi) => {
-//         try {
-//         const authLoginUser = await loginUser({email,password})
-// 		return authLoginUser
-// 	} catch (error) {
-// 		return thunkApi.rejectWithValue(error.message)
-// 	}
-// })
-
-// export const logoutThunk = createAsyncThunk(
-//     'auth/logout',
-//     async (_, thunkApi) => {
-//         try {
-//         const exitUser = await logoutUser()
-// 		return exitUser
-// 	} catch (error) {
-// 		return thunkApi.rejectWithValue(error.message)
-// 	}
-// })
-
-// export const currentUserThunk = createAsyncThunk(
-//     'current/user',
-//     async (_,thunkApi) => {
-//         const state = thunkApi.getState();
-//         const persistedToken = state.auth.token;
-
-//         if (persistedToken === null) {
-//             console.log('no token')
-//             return thunkApi.rejectWithValue('Unable to fetch user');
-//         }
-
-//         try {
-//             return await currentUser()
-
-//         } catch (error) {
-//             return thunkApi.rejectWithValue(error.message)
-//         }
-//     }
-// )
+export const deleteFavoriteCar = createAsyncThunk(
+  'cars/removeFavorite',
+  async (newFavorites, thunkAPI) => {
+    try {
+      return newFavorites;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);

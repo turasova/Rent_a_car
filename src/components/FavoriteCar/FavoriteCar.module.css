@@ -1,0 +1,60 @@
+.cardContainer {
+    display: flex;
+    column-gap: 24px;
+}
+
+.image {
+    width: 290px;
+    height: 310px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.descriptionText {
+
+    width: 525px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 24px;
+}
+
+.list {
+    list-style: none;
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.listItem {
+    display: flex;
+    padding: 12px 18px;
+    align-items: center;
+    gap: 8px;
+    border-radius: 100px;
+    background: #F2F4F7;
+    mix-blend-mode: multiply;
+}
+
+.title {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 30px;
+    margin-bottom: 8px;
+    align-items: baseline;
+
+}
+
+.location {
+    display: flex;
+    flex-wrap: nowrap;
+    column-gap: 16px;
+    margin-bottom: 24px;
+
+}
+

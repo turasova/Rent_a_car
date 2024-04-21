@@ -1,12 +1,11 @@
-const FavoritesPage = () => {
-  //   const contactIsLoading = useSelector(getIsLoading);
-  //   const contacts = useSelector(getContactValue);
-  //   const phonebook = defaultPhonebook;
-  //   const avatarContact = defaultAvatarContact;
+//import { FavoriteList } from 'components/FavoriteList/FavoriteList';
 
+const FavoritesPage = () => {
   return (
     <div>
-      <p>welcame favoritePage</p>
+      {/* {' '}
+      <FavoriteList />{' '} */}
+      <p></p>
     </div>
   );
 };

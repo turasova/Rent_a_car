@@ -1,17 +1,16 @@
 import { useState } from 'react';
-import css from './CarItem.module.css';
+import css from './FavoriteCar.module.css';
 import { ButtonCar } from 'components/Button/ButtonCar';
-//import { AiTwotoneHeart } from 'react-icons/ai';
 import { useDispatch, useSelector } from 'react-redux';
 import { Modal } from 'components/Modal/modal';
 import { selectFavorites } from 'store/selectors';
-import { addFavoriteCar, deleteFavoriteCar } from 'store/thunks';
+import { deleteFavoriteCar } from 'store/thunks';
 import { Heart } from 'components/Heart/heart';
 
-export const CarItem = ({ car }) => {
+export const FavoriteCar = ({ favorite, car }) => {
   const [isShowModal, setIsShowModal] = useState(false);
   const [modal, setModal] = useState(null);
-
+  //const isLoading = useSelector(selectIsLoading);
   // const cars = useSelector(selectCars);
   //const filteredCars = useSelector(selectFilteredCars);
   const favorites = useSelector(selectFavorites);
@@ -43,13 +42,11 @@ export const CarItem = ({ car }) => {
     setModal(null);
   };
 
-  const addFavorite = ({ _id }) => {
+  const deleteFavorite = ({ _id }) => {
     if (favorites.find(car => car.id === _id)) {
       let newFavorites = favorites.filter(item => item.id !== _id);
       dispatch(deleteFavoriteCar(newFavorites));
-      return;
     }
-    dispatch(addFavoriteCar({ _id }));
   };
 
   return (
@@ -61,15 +58,16 @@ export const CarItem = ({ car }) => {
         <div>
           <div className={css.title}>
             <p>{name}</p>
+
             <div className={css.favorite_container}>
               <p className={css.price}>€{price}</p>
               <button
                 className={css.button_favorite}
                 type="button"
-                onClick={addFavorite}
+                onClick={deleteFavorite}
                 id={_id}
               >
-                <Heart id={_id} />
+                <Heart />
               </button>
             </div>
           </div>
@@ -93,6 +91,7 @@ export const CarItem = ({ car }) => {
           {isShowModal && (
             <Modal
               car={car}
+              favorite={favorite}
               modal={modal}
               onCloseModal={onCloseModal}
               onOpenModal={onOpenModal}

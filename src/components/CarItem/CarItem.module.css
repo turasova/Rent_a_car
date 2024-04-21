@@ -1,10 +1,5 @@
-/* .imageContainer{
-   
-  width: 290px;
-  height: 310px;
-  object-fit: cover;
 
-} */
+
 .cardContainer{
     display: flex;
     column-gap: 24px;
@@ -48,15 +43,26 @@
         font-weight: 600;
         line-height: 30px;
         margin-bottom: 8px;
+        align-items: baseline;
        
 }
-/* .price {
-   align-content: end;
-} */
 .location {
 display: flex;
     flex-wrap: nowrap;
    column-gap: 16px;
    margin-bottom: 24px;
    
+}
+.heart{ 
+stroke:#101828;
+ fill: none;
+}
+.heart.active{
+    stroke: red;
+  
+}
+.favorite_container{
+    display: flex;
+    align-items: center;
+    justify-content: baseline;
 }

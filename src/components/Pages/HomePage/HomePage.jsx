@@ -1,12 +1,7 @@
-//import { useSelector } from 'react-redux';
-//import { isAuthSelector, userSelector } from 'store/selectors';
 import css from './HomePage.module.css';
 import { NavLink } from 'react-router-dom';
 
 const HomePage = () => {
-  // const isLoggedIn = useSelector(isAuthSelector);
-  // const user = useSelector(userSelector);
-
   return (
     <div className={css.container}>
       <div>

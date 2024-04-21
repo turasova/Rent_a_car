@@ -1,5 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getCarsThunk } from './thunks';
+import {
+  addFavoriteCar,
+  deleteFavoriteCar,
+  getCarsThunk,
+  getLocationThunk,
+} from './thunks';
 
 const handlePending = state => {
   state.isLoading = true;
@@ -8,7 +13,7 @@ const handlePending = state => {
 
 const handleRejected = (state, { payload }) => {
   state.isLoading = false;
-  state.error = payload.message;
+  state.error = payload;
 };
 const handleFulfilled = state => {
   state.isLoading = false;
@@ -16,6 +21,8 @@ const handleFulfilled = state => {
 
 const carInitialState = {
   cars: [],
+  filteredCars: [],
+  favorites: [],
   isLoading: false,
   error: null,
 };
@@ -27,13 +34,18 @@ const carsSlice = createSlice({
     builder
       .addCase(getCarsThunk.fulfilled, (state, { payload }) => {
         state.cars = payload;
+        state.filteredCars = [];
       })
-      //   .addCase(addContactThunk.fulfilled, (state, { payload }) => {
-      //     state.advert.unshift(payload);
-      //   })
-      //   .addCase(deleteContactThunk.fulfilled, (state, { payload }) => {
-      //     state.advert = state.advert.filter(car => car.id !== payload.id);
-      //   })
+      .addCase(getLocationThunk.fulfilled, (state, { payload }) => {
+        state.filteredCars = payload;
+      })
+      .addCase(addFavoriteCar.fulfilled, (state, { payload }) => {
+        state.favorites = [...state.favotites, ...payload];
+      })
+      .addCase(deleteFavoriteCar.fulfilled, (state, { payload }) => {
+        state.favorites = payload;
+      })
+
       .addMatcher(action => action.type.endsWith('/pending'), handlePending)
       .addMatcher(action => action.type.endsWith('/rejected'), handleRejected)
       .addMatcher(
@@ -44,3 +56,4 @@ const carsSlice = createSlice({
 });
 
 export const carsReducer = carsSlice.reducer;
+export const getIsLoading = state => state.cars.isLoading;

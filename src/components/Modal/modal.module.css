@@ -1,0 +1,28 @@
+.modal {
+width: 1000px;
+height: 700px;
+border-radius: 20px;
+background: #FFF;
+overflow-y: auto;
+position: relative;
+  
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1200;
+}
+.close {
+    width: 32px;
+    height: 32px;
+    margin-left: 900px;
+    position: absolute;
+    margin-top: 40px;
+}

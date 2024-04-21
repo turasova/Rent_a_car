@@ -1,32 +1,55 @@
-.title {
-    color: rgb(4, 4, 47);
-    font-style: italic;
-}
-
-.contactsWrapper {
-   
-    padding: 20px 20px;
-    border-radius: 10px;
-    width: 450px;
-    margin: 0px auto;
-    text-align: center;
-    background-color: rgb(203, 221, 237, 0.7);;
-    margin-bottom: 150px;
-}
-
-.phonebookWrapper {
-
-    padding: 20px 20px;
-    border-radius: 10px;
-    width: 450px;
-    margin: 50px auto;
-    text-align: center;
-    margin-top: 150px;
-    background-color: rgb(203, 221, 237, 0.7);;
-}
-.phone{
+.home_container{
     display: flex;
+}
+.search_container {
+    margin-top: 80px;
+    margin-left: 64px;
+}
+
+.button_search{
+    display: inline-flex;
+    padding: 16px 60px;
     justify-content: center;
-    gap: 20px;
     align-items: center;
+    gap: 10px;
+    border-radius: 200px;
+    background: #E44848;
+    cursor: pointer;
+    border: none;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: -0.08px
+}
+.button_search:hover,
+.button_search:focus {
+    background: #D84343;
+}
+
+.label{
+    color: rgba(16, 24, 40, 0.60);
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.input_label{
+    display: flex;
+    padding: 18px 218px 18px 18px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 10px;
+    background: #F7F7F7;
+    color: #101828; 
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
 }

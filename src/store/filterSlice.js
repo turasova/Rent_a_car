@@ -25,4 +25,4 @@ export const getFilter = state => state.filter.favorite;
 export const { filterSet, addFavorites, deleteFavorites } =
   filterFavoritesSlice.actions;
 
-//export default filterFavoritesSlice.reducer;
+export default filterFavoritesSlice.reducer;
