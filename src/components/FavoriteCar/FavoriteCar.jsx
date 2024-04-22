@@ -5,9 +5,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Modal } from 'components/Modal/modal';
 import { selectFavorites } from 'store/selectors';
 import { deleteFavoriteCar } from 'store/thunks';
-import { Heart } from 'components/Heart/heart';
+import svg from '../../images/symbol-defs.svg';
 
-export const FavoriteCar = ({ favorite, car }) => {
+export const FavoriteCar = ({ car }) => {
   const [isShowModal, setIsShowModal] = useState(false);
   const [modal, setModal] = useState(null);
   //const isLoading = useSelector(selectIsLoading);
@@ -67,7 +67,9 @@ export const FavoriteCar = ({ favorite, car }) => {
                 onClick={deleteFavorite}
                 id={_id}
               >
-                <Heart />
+                <svg width={24} height={24} className={css.heart}>
+                  <use xlinkHref={`${svg}#icon-heart`}></use>
+                </svg>
               </button>
             </div>
           </div>
@@ -91,7 +93,6 @@ export const FavoriteCar = ({ favorite, car }) => {
           {isShowModal && (
             <Modal
               car={car}
-              favorite={favorite}
               modal={modal}
               onCloseModal={onCloseModal}
               onOpenModal={onOpenModal}

@@ -2,9 +2,12 @@ import { Tabs } from 'components/Tabs/Tabs';
 import css from './DetailsCar.module.css';
 import { useState } from 'react';
 import { Form } from 'components/Form/Form';
+//import svg from '../../images/symbol-defs.svg';
+import RatingStars from 'components/Header/RatingStars/RatingStars';
 
 export const DetailsCar = ({ car }) => {
   const [activeTab, setActiveTab] = useState('');
+  // const ratingFromAPI = ;
 
   const {
     name,
@@ -87,10 +90,10 @@ export const DetailsCar = ({ car }) => {
                 <div>
                   <ul className={css.list_vehicle}>
                     <li className={css.listItem_details}>Form</li>
-                    <li className={css.listItem_details}>Length </li>
-                    <li className={css.listItem_details}>Width </li>
-                    <li className={css.listItem_details}>Height </li>
-                    <li className={css.listItem_details}>Tank </li>
+                    <li className={css.listItem_details}>Length</li>
+                    <li className={css.listItem_details}>Width</li>
+                    <li className={css.listItem_details}>Height</li>
+                    <li className={css.listItem_details}>Tank</li>
                     <li className={css.listItem_details}>Consumption</li>
                   </ul>
                 </div>
@@ -119,7 +122,9 @@ export const DetailsCar = ({ car }) => {
                   ({ _id, reviewer_name, reviewer_rating, comment }) => (
                     <li key={_id}>
                       <p className={css.name}>{reviewer_name}</p>
-                      <p className={css.rating}>{reviewer_rating} stars</p>
+                      <div className={css.stars_container}>
+                        <RatingStars rating={reviewer_rating} />
+                      </div>
                       <p className={css.comment}>{comment}</p>
                     </li>
                   )

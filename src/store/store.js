@@ -15,9 +15,8 @@ import storage from 'redux-persist/lib/storage';
 import { carsReducer } from './carSlice';
 
 const persistConfig = {
-  key: 'favorites',
+  key: 'cars',
   storage,
-  whitelist: ['favorites'],
 };
 
 export const store = configureStore({

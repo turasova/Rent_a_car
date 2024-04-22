@@ -4,8 +4,10 @@ const carsInstance = axios.create({
   baseURL: 'https://661f772216358961cd94639f.mockapi.io',
 });
 
-export const fetchCars = async (page = 1) => {
-  const { data } = await carsInstance.get(`/advert?page=${page}&limit=4`);
+export const fetchCars = async ({ page, limit }) => {
+  const { data } = await carsInstance.get(
+    `/advert?page=${page}&limit=${limit}`
+  );
   console.log(data);
   return data;
 };

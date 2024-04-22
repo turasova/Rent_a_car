@@ -1,7 +1,7 @@
 @import-normalize; /* bring in normalize.css styles */
 
 body {
-  font-family: sans-serif;
+  font-family: inter;
   line-height: 1.5;
 background-color: lightgrey;
     background-image: url('./images/small_motorhome.jpg');

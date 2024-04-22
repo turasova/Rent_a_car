@@ -3,9 +3,9 @@ import { fetchCars, fetchCarsId, fetchCarsLocation } from 'service/getCarsApi';
 
 export const getCarsThunk = createAsyncThunk(
   'advert/getAllCars',
-  async (_, thunkApi) => {
+  async ({ page, limit }, thunkApi) => {
     try {
-      const data = await fetchCars();
+      const data = await fetchCars({ page, limit });
       console.log(data);
       return data;
     } catch (error) {

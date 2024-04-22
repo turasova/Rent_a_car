@@ -1,11 +1,9 @@
-//import { FavoriteList } from 'components/FavoriteList/FavoriteList';
+import { FavoriteList } from 'components/FavoriteList/FavoriteList';
 
-const FavoritesPage = () => {
+const FavoritesPage = ({ favoriteCars }) => {
   return (
     <div>
-      {/* {' '}
-      <FavoriteList />{' '} */}
-      <p></p>
+      <FavoriteList cars={favoriteCars} /> <p></p>
     </div>
   );
 };

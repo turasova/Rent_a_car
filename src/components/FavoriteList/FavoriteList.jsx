@@ -5,7 +5,12 @@ import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { addFavoriteCar } from 'store/thunks';
 
-export const FavoriteList = ({ _id, onOpenModal, onCloseModal }) => {
+export const FavoriteList = ({
+  _id,
+  onOpenModal,
+  onCloseModal,
+  onFavorite,
+}) => {
   const favorites = useSelector(selectFavorites);
 
   const dispatch = useDispatch();
@@ -21,6 +26,7 @@ export const FavoriteList = ({ _id, onOpenModal, onCloseModal }) => {
           <li className="" key={car._id}>
             <FavoriteCar
               favorite={car}
+              onFavorite={onFavorite}
               onOpenModal={onOpenModal}
               onCloseModal={onCloseModal}
             />
