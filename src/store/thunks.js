@@ -1,8 +1,26 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { fetchCars, fetchCarsId, fetchCarsLocation } from 'service/getCarsApi';
+import {
+  fetchAllCars,
+  fetchCars,
+  fetchCarsFilter,
+  fetchCarsId,
+} from 'service/getCarsApi';
+
+export const getAllCarsThunk = createAsyncThunk(
+  'cars/getAllCars',
+  async (_, thunkApi) => {
+    try {
+      const data = await fetchAllCars();
+      console.log(data);
+      return data;
+    } catch (error) {
+      return thunkApi.rejectWithValue(error.message);
+    }
+  }
+);
 
 export const getCarsThunk = createAsyncThunk(
-  'advert/getAllCars',
+  'cars/getCars',
   async ({ page, limit }, thunkApi) => {
     try {
       const data = await fetchCars({ page, limit });
@@ -13,19 +31,35 @@ export const getCarsThunk = createAsyncThunk(
     }
   }
 );
-
-export const getLocationThunk = createAsyncThunk(
-  'advert/getLocationCars',
-  async ({ location }, thunkApi) => {
+export const getFilterThunk = createAsyncThunk(
+  'cars/getFilter',
+  async ({ filter }, thunkApi) => {
     try {
-      const data = await fetchCarsLocation({ location });
-      console.log(data);
-      return data;
+      if (filter.length !== 0) {
+        const data = await fetchCarsFilter({ filter });
+        console.log(data);
+        return data;
+      } else {
+        return [];
+      }
     } catch (error) {
       return thunkApi.rejectWithValue(error.message);
     }
   }
 );
+
+// export const getLocationThunk = createAsyncThunk(
+//   'advert/getLocationCars',
+//   async ({ location }, thunkApi) => {
+//     try {
+//       const data = await fetchCarsLocation({ location });
+//       console.log(data);
+//       return data;
+//     } catch (error) {
+//       return thunkApi.rejectWithValue(error.message);
+//     }
+//   }
+// );
 
 export const addFavoriteCar = createAsyncThunk(
   'cars/addFavorite',

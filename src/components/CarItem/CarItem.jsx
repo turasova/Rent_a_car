@@ -1,23 +1,24 @@
 import { useState } from 'react';
 import css from './CarItem.module.css';
 import { ButtonCar } from 'components/Button/ButtonCar';
-// import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Modal } from 'components/Modal/modal';
-// import { selectFavorites } from 'store/selectors';
-//import { addFavoriteCar, deleteFavoriteCar } from 'store/thunks';
+//import { selectFavorites } from 'store/selectors';
 import svg from '../../images/symbol-defs.svg';
-// import { selectFavorites } from 'store/selectors';
+//import { addFavorites, deleteFavorites } from 'store/carSlice';
+import { selectFavorites } from 'store/selectors';
+import { addFavoriteCar, deleteFavoriteCar } from 'store/thunks';
 
-export const CarItem = ({ car, addFavorite }) => {
+export const CarItem = ({ car }) => {
   const [isShowModal, setIsShowModal] = useState(false);
   const [modal, setModal] = useState(null);
+  const favorites = useSelector(selectFavorites);
 
+  //const [favoriteCars, setFavoriteCars] = useState([]);
   // const cars = useSelector(selectCars);
   //const filteredCars = useSelector(selectFilteredCars);
-  // const favorites = useSelector(selectFavorites);
-  // const [favoriteCars, setFavoriteCars] = useState([]);
 
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   const {
     _id,
@@ -34,6 +35,14 @@ export const CarItem = ({ car, addFavorite }) => {
     reviews,
   } = car;
 
+  // const isFavorite = favorites?.some(favCar => favCar.id === _id);
+
+  // const handleToggleFavorite = () => {
+  //   return isFavorite
+  //     ? dispatch(addFavoriteCar(car))
+  //     : dispatch(deleteFavoriteCar(car));
+  // };
+
   const onOpenModal = modalData => {
     setIsShowModal(true);
     setModal(modalData);
@@ -44,14 +53,14 @@ export const CarItem = ({ car, addFavorite }) => {
     setModal(null);
   };
 
-  // const addFavorite = ({ id }) => {
-  //   if (favorites.find(car => car._id === id)) {
-  //     let newFavorites = favorites.filter(item => item._id !== id);
-  //     dispatch(deleteFavoriteCar(newFavorites));
-  //     return;
-  //   }
-  //   dispatch(addFavoriteCar({ _id }));
-  // };
+  const addFavorite = () => {
+    if (favorites?.find(car => car._id === _id)) {
+      let newFavorites = favorites.filter(item => item._id !== _id);
+      dispatch(deleteFavoriteCar(newFavorites));
+      return;
+    }
+    dispatch(addFavoriteCar({ _id }));
+  };
 
   return (
     <>
@@ -80,17 +89,53 @@ export const CarItem = ({ car, addFavorite }) => {
             <p>
               {rating}({reviews.reviewer_rating} Reviews)
             </p>
-            <p>{location}</p>
+            <p className={css.text_location}>
+              <svg width={16} height={16} className={css.icons}>
+                <use xlinkHref={`${svg}#icon-location`}></use>
+              </svg>
+              {location}
+            </p>
           </div>
 
           <p className={css.descriptionText}>{description}</p>
           <ul key={_id} className={css.list}>
-            <li className={css.listItem}>{adults} adults</li>
-            <li className={css.listItem}>{engine}</li>
-            <li className={css.listItem}>{transmission}</li>
-            <li className={css.listItem}>{details.kitchen} kitchen</li>
-            <li className={css.listItem}>{details.beds} beds</li>
-            <li className={css.listItem}>{details.airConditioner} AC</li>
+            <li className={css.listItem}>
+              <svg width={20} height={20}>
+                <use xlinkHref={`${svg}#icon-people`}></use>
+              </svg>
+              {adults}
+              adults
+            </li>
+            <li className={css.listItem}>
+              <svg width={20} height={20}>
+                <use xlinkHref={`${svg}#icon-bak`}></use>
+              </svg>
+              {engine}
+            </li>
+            <li className={css.listItem}>
+              <svg width={20} height={20} className={css.icons}>
+                <use xlinkHref={`${svg}#icon-transmission`}></use>
+              </svg>
+              {transmission}
+            </li>
+            <li className={css.listItem}>
+              <svg width={20} height={20} className={css.icons}>
+                <use xlinkHref={`${svg}#icon-eat`}></use>
+              </svg>
+              {details.kitchen} kitchen
+            </li>
+            <li className={css.listItem}>
+              <svg width={20} height={20} className={css.icons}>
+                <use xlinkHref={`${svg}#icon-bag`}></use>
+              </svg>
+              {details.beds} beds
+            </li>
+            <li className={css.listItem}>
+              <svg width={20} height={20} className={css.icons}>
+                <use xlinkHref={`${svg}#icon-freezer`}></use>
+              </svg>
+              {details.freezer} freezer
+            </li>
           </ul>
           <ButtonCar onOpenModal={onOpenModal} />
           {isShowModal && (

@@ -2,12 +2,10 @@ import { Tabs } from 'components/Tabs/Tabs';
 import css from './DetailsCar.module.css';
 import { useState } from 'react';
 import { Form } from 'components/Form/Form';
-//import svg from '../../images/symbol-defs.svg';
-import RatingStars from 'components/Header/RatingStars/RatingStars';
+import RatingStars from 'components/RatingStars/RatingStars';
 
 export const DetailsCar = ({ car }) => {
   const [activeTab, setActiveTab] = useState('');
-  // const ratingFromAPI = ;
 
   const {
     name,

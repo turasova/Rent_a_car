@@ -21,6 +21,7 @@
 .list{
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
     gap: 8px;
     margin-bottom: 24px;
 }
@@ -65,4 +66,19 @@ stroke:#101828;
     display: flex;
     align-items: center;
     justify-content: baseline;
+}
+.button_favorite{
+    border: none;
+    background-color: transparent;
+}
+.icons {
+    stroke:#101828;
+    fill: #F2F4F7;
+ 
+}
+.text_location {
+   display: flex;
+   justify-content: baseline;
+   align-items: center;
+   gap: 4px;
 }

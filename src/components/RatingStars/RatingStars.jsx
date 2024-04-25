@@ -1,5 +1,5 @@
 import React from 'react';
-import svg from '../../../images/symbol-defs.svg';
+import svg from '../../images/symbol-defs.svg';
 
 const RatingStars = ({ rating }) => {
   const stars = Array.from({ length: rating }, (_, index) => index + 1);

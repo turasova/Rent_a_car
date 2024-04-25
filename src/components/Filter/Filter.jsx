@@ -1,15 +1,15 @@
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 import css from './Filter.module.css';
 import { useDispatch } from 'react-redux';
-import { getLocationThunk } from 'store/thunks';
+import { getFilterThunk } from 'store/thunks';
 
-export const LocationFilter = ({ onFilter }) => {
+export const LocationFilter = () => {
   const [location, setLocation] = useState('');
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getLocationThunk(location));
-  }, [location, dispatch]);
+    dispatch(getFilterThunk());
+  }, [dispatch]);
 
   const handleChange = event => {
     setLocation(event.target.value);
@@ -17,7 +17,7 @@ export const LocationFilter = ({ onFilter }) => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    onFilter(location);
+    setLocation(location);
   };
   return (
     <>

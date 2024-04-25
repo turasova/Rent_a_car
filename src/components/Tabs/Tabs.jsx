@@ -5,21 +5,16 @@ export const Tabs = ({ activeTab, setActiveTab }) => {
     <div className={css.tabs_container}>
       <button
         onClick={() => setActiveTab('features')}
-        className={activeTab === `${'features'} ? ${css.active} : ''`}
+        className={activeTab === 'features' ? 'active' : ''}
       >
         Features
       </button>
       <button
         onClick={() => setActiveTab('reviews')}
-        className={activeTab === `${'reviews'} ? ${css.active} : ''`}
+        className={activeTab === 'reviews' ? 'active' : ''}
       >
         Reviews
       </button>
     </div>
   );
 };
-
-//  <button
-//         onClick={() => setActiveTab('reviews')}
-//         className={activeTab === 'reviews' ? 'active' : ''}
-//       ></button>

@@ -1,9 +1,13 @@
 import { FavoriteList } from 'components/FavoriteList/FavoriteList';
+// import { useSelector } from 'react-redux';
+// import { selectFavorites } from 'store/selectors';
 
-const FavoritesPage = ({ favoriteCars }) => {
+const FavoritesPage = () => {
+  //const favorites = useSelector(selectFavorites);
+
   return (
     <div>
-      <FavoriteList cars={favoriteCars} /> <p></p>
+      <FavoriteList /> <p></p>
     </div>
   );
 };

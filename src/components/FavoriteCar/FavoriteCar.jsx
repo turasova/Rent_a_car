@@ -6,6 +6,7 @@ import { Modal } from 'components/Modal/modal';
 import { selectFavorites } from 'store/selectors';
 import { deleteFavoriteCar } from 'store/thunks';
 import svg from '../../images/symbol-defs.svg';
+//import { deleteFavorites } from 'store/carSlice';
 
 export const FavoriteCar = ({ car }) => {
   const [isShowModal, setIsShowModal] = useState(false);
@@ -42,9 +43,9 @@ export const FavoriteCar = ({ car }) => {
     setModal(null);
   };
 
-  const deleteFavorite = ({ _id }) => {
-    if (favorites.find(car => car.id === _id)) {
-      let newFavorites = favorites.filter(item => item.id !== _id);
+  const deleteFavorite = () => {
+    if (favorites.find(car => car._id === _id)) {
+      let newFavorites = favorites.filter(item => item._id !== _id);
       dispatch(deleteFavoriteCar(newFavorites));
     }
   };
