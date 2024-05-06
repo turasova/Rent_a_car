@@ -13,9 +13,9 @@ export const FavoriteList = () => {
     <div>
       <ul className="{css.listCars}">
         {favorites &&
-          favorites.map(car => (
-            <li className="" key={car._id}>
-              <FavoriteCar car={car} />
+          favorites.map(({ favoriteCar }) => (
+            <li className="" key={favoriteCar._id}>
+              <FavoriteCar favoriteCar={favoriteCar} id={favoriteCar._id} />
             </li>
           ))}
       </ul>

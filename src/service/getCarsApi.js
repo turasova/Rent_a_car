@@ -22,7 +22,7 @@ export const fetchCarsId = async _id => {
   console.log(data);
   return data;
 };
-//fetchCarsId();
+// fetchCarsId();
 
 export const fetchCarsFilter = async filter => {
   const { data } = await carsInstance.get(`/advert?filter=${filter}`);

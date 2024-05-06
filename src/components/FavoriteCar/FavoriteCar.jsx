@@ -8,7 +8,7 @@ import { deleteFavoriteCar } from 'store/thunks';
 import svg from '../../images/symbol-defs.svg';
 //import { deleteFavorites } from 'store/carSlice';
 
-export const FavoriteCar = ({ car }) => {
+export const FavoriteCar = ({ favoriteCar }) => {
   const [isShowModal, setIsShowModal] = useState(false);
   const [modal, setModal] = useState(null);
   //const isLoading = useSelector(selectIsLoading);
@@ -31,7 +31,7 @@ export const FavoriteCar = ({ car }) => {
     details,
     gallery,
     reviews,
-  } = car;
+  } = favoriteCar;
 
   const onOpenModal = modalData => {
     setIsShowModal(true);
@@ -93,7 +93,7 @@ export const FavoriteCar = ({ car }) => {
           <ButtonCar onOpenModal={onOpenModal} />
           {isShowModal && (
             <Modal
-              car={car}
+              favoriteCar={favoriteCar}
               modal={modal}
               onCloseModal={onCloseModal}
               onOpenModal={onOpenModal}

@@ -55,8 +55,9 @@ export const CarItem = ({ car }) => {
 
   const addFavorite = () => {
     if (favorites?.find(car => car._id === _id)) {
-      let newFavorites = favorites.filter(item => item._id !== _id);
+      let newFavorites = favorites.filter(car => car._id !== _id);
       dispatch(deleteFavoriteCar(newFavorites));
+
       return;
     }
     dispatch(addFavoriteCar({ _id }));

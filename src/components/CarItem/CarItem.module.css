@@ -58,10 +58,7 @@ display: flex;
 stroke:#101828;
  fill: none;
 }
-.heart.active{
-    stroke: red;
-  
-}
+
 .favorite_container{
     display: flex;
     align-items: center;
@@ -71,6 +68,13 @@ stroke:#101828;
     border: none;
     background-color: transparent;
 }
+.button_favorite .heart:active,
+.button_favorite .heart:focus,
+.button_favorite .heart:hover {
+    stroke: #E44848;
+    fill: #E44848;
+}
+
 .icons {
     stroke:#101828;
     fill: #F2F4F7;
